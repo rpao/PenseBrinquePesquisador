@@ -34,3 +34,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Links:
+https://github.com/rpao/PenseBrinquePesquisador/tree/main/pense-brinque-pesquisador/src/app
+https://github.com/TeleRaptor65/Pense-e-Brinque/tree/main
+https://nextjs.org/docs/app/building-your-application/styling/css-modules
+https://react-bootstrap.github.io/docs/components/cards
+https://www.w3schools.com/js/js_graphics_chartjs.asp
