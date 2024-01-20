@@ -1,0 +1,21 @@
+.start-menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+};
+
+svg {
+    margin-left: 5px ;
+}
+
+.card {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.card-title span {
+    margin-left: 10px;
+}

@@ -1,0 +1,16 @@
+.app-brand {
+    display: flex;
+    flex-direction: line;
+    align-items: center;
+}
+
+.app-brand-text-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.app-brand-subtitle {
+    color: grey;
+    font-size: small;
+}
