@@ -1,4 +1,4 @@
-import { BarChartProps } from "@/app/components/charts/chart.types";
+import { BarChartProps } from "@/app/components/Charts/chart.types";
 
 export type DashboardChart = {
   headerTitle: string;
@@ -7,4 +7,4 @@ export type DashboardChart = {
 
 export type DashboardPageProps = {
   dashboardCharts: DashboardChart[];
-}
+};

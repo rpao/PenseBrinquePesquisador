@@ -42,3 +42,10 @@ https://nextjs.org/docs/app/building-your-application/styling/css-modules
 https://react-bootstrap.github.io/docs/components/cards
 https://www.w3schools.com/js/js_graphics_chartjs.asp
 https://react-chartjs-2.js.org/components/bar/
+
+## Environment Setup
+
+### Pre-requisites
+
+1. Node.js (v20.11.0)
+2. GIT

@@ -1,0 +1,15 @@
+.labeled-data-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.label-container {
+  color: var(--color-neutral-dark);
+  margin-right: 8px;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+
+.data-container {
+  color: var(--color-dark);
+}
