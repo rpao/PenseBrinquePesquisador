@@ -1,0 +1,24 @@
+.btn,
+.btn-group {
+  display: flex;
+  align-items: center;
+}
+
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn.dropdown-toggle-split:first-child,
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-radius: var(--extra-small-space);
+}
+
+.logout-button {
+  margin: 0 var(--small-space);
+}
+
+.user-name {
+  font-size: medium;
+}
+
+.user-role {
+  margin: 0 var(--extra-small-space);
+  font-size: small;
+}

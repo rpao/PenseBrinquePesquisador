@@ -1,12 +1,14 @@
-import './globals.css';
+'use client';
 
-import StartMenu from './home/startMenu';
-import React from 'react';
+import './globals.css';
+import AuthProvider from './authentication/authContext';
+
+export const rootHref = '/';
 
 export default function Home() {
   return (
-    <main>
-      <StartMenu />
-    </main>
+    <AuthProvider>
+      <main></main>
+    </AuthProvider>
   );
 }

@@ -13,6 +13,14 @@ export class Locators {
   static birthDateLabel = 'Data de Nascimento';
 }
 
+export class UserRoleLocators {
+  static Researcher = 'Pesquisador';
+  static Teacher = 'Professor';
+  static Manager = 'Gerente';
+  static Contributor = 'Colaborador Externo';
+  static Undefined = 'Papel não definido';
+}
+
 /**
  * Receives a string, checks if there is a Locator for it.
  *
@@ -44,5 +52,27 @@ export const findLocatorForString = (text: string): string | undefined => {
       return Locators.birthDateLabel;
     default:
       return undefined;
+  }
+};
+
+export const findUserRoleLocatorForString = (
+  text: string | undefined,
+): string | undefined => {
+  if (!text) return UserRoleLocators.Undefined;
+
+  const sanitizedText = text.toLowerCase();
+
+  switch (text) {
+    case 'Researcher':
+      return UserRoleLocators.Researcher;
+    case 'Teacher':
+      return UserRoleLocators.Teacher;
+    case 'Manager':
+      return UserRoleLocators.Manager;
+    case 'Contributor':
+      return UserRoleLocators.Contributor;
+    case 'Undefined':
+    default:
+      return UserRoleLocators.Undefined;
   }
 };

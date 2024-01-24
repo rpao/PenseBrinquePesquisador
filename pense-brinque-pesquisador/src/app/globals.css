@@ -38,11 +38,18 @@
 
 /** Global CSS */
 :host,
-html,
-body {
+html {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   min-width: 100%;
   overflow: hidden;
 }
@@ -107,6 +114,7 @@ a.simple-link-dark {
   background-color: var(--neutral-dark);
   color: var(--light);
   border: none;
+  align-self: center;
 }
 
 .accent-button:hover {

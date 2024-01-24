@@ -1,6 +1,11 @@
-export type UserRole = 'Researcher' | 'Teacher' | 'Manager' | 'Contributor';
+export type UserRole =
+  | 'Researcher'
+  | 'Teacher'
+  | 'Manager'
+  | 'Contributor'
+  | undefined;
 
-export type UserProfile = 'Admin' | 'User';
+export type UserProfile = 'Admin' | 'User' | undefined;
 
 export type UserData = {
   // User Name
@@ -10,7 +15,9 @@ export type UserData = {
   // User email
   email: string;
   // User BirthDate
-  birthDate: Date;
+  birthDate: Date | undefined;
   // User Profile;
   profile: UserProfile;
 };
+
+export type UserLoginCredentials = { email: string; password: string };

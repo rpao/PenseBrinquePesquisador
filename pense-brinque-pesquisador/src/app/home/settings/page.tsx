@@ -1,5 +1,12 @@
-import Settings from "./settings";
+'use client';
+
+import AuthProvider from '@/app/authentication/authContext';
+import Settings from './settings';
 
 export default function Page() {
-  return <Settings />;
+  return (
+    <AuthProvider>
+      <Settings />
+    </AuthProvider>
+  );
 }

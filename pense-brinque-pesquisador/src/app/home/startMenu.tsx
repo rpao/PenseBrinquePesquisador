@@ -5,17 +5,19 @@ import {
   FileEarmarkSpreadsheet,
   Gear,
 } from 'react-bootstrap-icons';
-import RowMenu, { type RowMenuType } from '../components/RowMenu/RowMenu';
 import { type MenuButtonProps } from '../components/MenuButton/MenuButton';
 import { Locators } from '../shared/constants/locator';
 import './startMenu.css';
 import { DashboardHref } from './dashboards/dashboardsPage';
 import { ReportsHref } from './reports/reportsPage';
 import { SettingsHref } from './settings/settings';
+import RowMenu, { RowMenuType } from '../components/RowMenu/RowMenu';
 
 export type StartMenuProps = {
   userRole: string;
 };
+
+export const homeHref = '/home';
 
 export default function StartMenu() {
   const dashboardMenuButton: MenuButtonProps = {

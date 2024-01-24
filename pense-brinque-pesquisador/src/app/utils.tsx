@@ -10,14 +10,6 @@ import {
 } from './shared/models/breadcrumbData';
 import { UserData } from './shared/models/user';
 
-export const getMockedUser = (): UserData => ({
-  name: 'Rebeca',
-  role: 'Researcher',
-  profile: 'Admin',
-  email: 'rebeca@gmail.com',
-  birthDate: new Date('1993-12-11'),
-});
-
 const mockedBarChart: BarChartProps = {
   chartId: 'year-data',
   title: 'Year Result',
@@ -68,36 +60,23 @@ export function getDashboards(): DashboardPageProps {
 }
 
 /**
- * Maps a URL (string) to a Breadcrumb Data.
- *
- * @param url - URL to be converted into BreadcrumbItem.
- * @returns BreadcrumbData.
- */
-export function mapUrlToBreadcrumbData(url: string): BreadcrumbData {
-  let href = '';
-  let breadcrumbData: BreadcrumbData = [];
-  const segments = url.split('/');
-  segments.forEach((segment: string, index: number) => {
-    if (segment) {
-      href += '/' + segment;
-      const breadcrumbItem: BreadcrumbItemData = {
-        href,
-        label: findLocatorForString(segment) ?? segment,
-        active: index == segments.length - 1,
-      };
-      breadcrumbData.push(breadcrumbItem);
-    }
-  });
-  return breadcrumbData;
-}
-
-/**
  * Receives a date and return a string in 'DD/MM/YYYY' format.
  *
  * @param date - Original date.
  * @returns Formatted string.
  */
-export const getStringDateDDMMYYYY = (date: Date): string => {
+export const getStringDateDDMMYYYY = (date: Date | undefined): string => {
+  if (!date) return '--';
+
   const dateInfo = date.toISOString().split('T')[0].split('-');
   return `${dateInfo[1]}/${dateInfo[2]}/${dateInfo[0]}`;
 };
+
+/**
+ * Converts an object to string.
+ *
+ * @param u - User object.
+ * @returns Final string.
+ */
+export const userToString = (u: UserData): string =>
+  `{'birthDate':'${u.birthDate}','email':'${u.email}','name':'${u.name}','profile':${u.profile},'role':'${u.role}'`;
