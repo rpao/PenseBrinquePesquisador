@@ -7,9 +7,8 @@ import { Navbar, Container } from 'react-bootstrap';
 import { UserData } from './shared/models/user';
 import Link from 'next/link';
 import { getMockedUser } from './utils';
-import AppBrand from './components/AppBrand/AppBrand';
-import UserMenu from './components/UserMenu/UserMenu';
-import BreadCrumb from './components/BreadCrumb/BreadCrumb';
+import AppBrand from './components/AppBrand/appBrand';
+import UserMenu from './components/UserMenu/userMenu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,12 +35,7 @@ export default function RootLayout({
             <UserMenu name={userData.name} />
           </Container>
         </Navbar>
-        <div className="main-container">
-          <div className="full-size-container">
-            <BreadCrumb />
-            {children}
-          </div>
-        </div>
+        {children}
       </body>
     </html>
   );

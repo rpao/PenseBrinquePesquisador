@@ -5,6 +5,8 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <main><StartMenu /></main>
+    <main>
+      <StartMenu />
+    </main>
   );
 }

@@ -1,0 +1,56 @@
+:host {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.gradient-background {
+  background-color: var(--enphasis-dark);
+  background-image: linear-gradient(
+    0deg,
+    var(--enphasis-dark) 0%,
+    var(--accent) 100%
+  );
+}
+
+.login-main-container {
+  align-items: center;
+}
+
+.form {
+  text-align: center;
+}
+
+.form-label {
+  margin: 0 3px;
+  align-self: center;
+  padding-right: 2px;
+  background-color: transparent;
+  border-right: 2px solid var(--neutral-light);
+  color: var(--accent);
+}
+
+.form-group {
+  background: var(--light);
+  border-radius: 5px;
+  border: 1px solid var(--light);
+}
+
+.form-group:hover {
+  box-shadow: 0 0 0 0.25rem var(--accent);
+}
+
+.form-control {
+  background: transparent;
+  border: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.card {
+  background: var(--light-transparent);
+  border: 1px solid var(--light);
+  width: 50%;
+  margin: var(--medium-space);
+}

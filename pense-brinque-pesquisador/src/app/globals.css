@@ -5,6 +5,7 @@
   --accent: #008c82;
   --dark: #002721;
   --light: #f8f9fa;
+  --light-transparent: rgba(255, 255, 255, 0.116);
   --secondary: #204d81;
   --tertiary: #5a7eb7;
   --neutral-dark: #334b48;
@@ -36,6 +37,16 @@
 }
 
 /** Global CSS */
+:host,
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+}
+
 .navbar {
   background-color: var(--accent);
   color: var(--neutral-light);
@@ -90,4 +101,21 @@ a.simple-link-dark {
   border: 1px solid var(--dark);
   color: var(--dark);
   margin: var(--medium-space);
+}
+
+.accent-button {
+  background-color: var(--neutral-dark);
+  color: var(--light);
+  border: none;
+}
+
+.accent-button:hover {
+  background-color: var(--accent);
+  color: var(--light);
+}
+
+/** Global Flex Style */
+
+.flex-container {
+  display: flex;
 }
