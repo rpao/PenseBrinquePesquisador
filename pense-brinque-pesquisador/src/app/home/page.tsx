@@ -1,12 +1,5 @@
-'use client';
-
-import AuthProvider from '../authentication/authContext';
-import StartMenu from './startMenu';
+export const homeHref = '/home';
 
 export default function Page() {
-  return (
-    <AuthProvider>
-      <StartMenu />
-    </AuthProvider>
-  );
+  return <h1>Home Page</h1>;
 }

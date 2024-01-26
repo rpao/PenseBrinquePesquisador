@@ -1,5 +1,8 @@
-import { Login } from './login';
-import './login.css';
+'use client';
+
+import Login from './login';
+
+export const loginHref = '/login';
 
 export default function Page() {
   return <Login />;

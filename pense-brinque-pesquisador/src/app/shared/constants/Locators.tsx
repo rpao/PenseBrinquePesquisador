@@ -13,14 +13,6 @@ export class Locators {
   static birthDateLabel = 'Data de Nascimento';
 }
 
-export class UserRoleLocators {
-  static Researcher = 'Pesquisador';
-  static Teacher = 'Professor';
-  static Manager = 'Gerente';
-  static Contributor = 'Colaborador Externo';
-  static Undefined = 'Papel não definido';
-}
-
 /**
  * Receives a string, checks if there is a Locator for it.
  *
@@ -55,24 +47,54 @@ export const findLocatorForString = (text: string): string | undefined => {
   }
 };
 
-export const findUserRoleLocatorForString = (
-  text: string | undefined,
-): string | undefined => {
-  if (!text) return UserRoleLocators.Undefined;
+export class RoleLocators {
+  static Researcher = 'Pesquisador';
+  static Teacher = 'Professor';
+  static Manager = 'Coordenador';
+  static Contributor = 'Colaborador';
+  static UndefinedRole = 'Papel não definido';
+}
 
-  const sanitizedText = text.toLowerCase();
+export class ProfileLocators {
+  static Admin = 'Admin';
+  static User = 'User';
+  static UndefinedProfile = 'Perfil não definido';
+}
 
+/**
+ * Finds the correct role locator for the received text.
+ *
+ * @param text
+ * @returns Role Locator.
+ */
+export const getRoleLocator = (text: string) => {
   switch (text) {
     case 'Researcher':
-      return UserRoleLocators.Researcher;
+      return RoleLocators.Researcher;
     case 'Teacher':
-      return UserRoleLocators.Teacher;
+      return RoleLocators.Teacher;
     case 'Manager':
-      return UserRoleLocators.Manager;
+      return RoleLocators.Manager;
     case 'Contributor':
-      return UserRoleLocators.Contributor;
-    case 'Undefined':
+      return RoleLocators.Contributor;
     default:
-      return UserRoleLocators.Undefined;
+      return RoleLocators.UndefinedRole;
+  }
+};
+
+/**
+ * Finds the correct profile locator for the received text.
+ *
+ * @param text
+ * @returns Profile Locator
+ */
+export const getProfileLocator = (text: string) => {
+  switch (text) {
+    case 'Admin':
+      return ProfileLocators.Admin;
+    case 'User':
+      return ProfileLocators.User;
+    default:
+      return ProfileLocators.UndefinedProfile;
   }
 };
