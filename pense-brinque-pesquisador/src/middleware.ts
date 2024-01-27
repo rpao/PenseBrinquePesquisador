@@ -7,7 +7,7 @@ import authenticationServer from './app/authentication/authenticationServer';
 export function middleware(request: NextRequest) {
   try {
     const authenticatedUser = authenticationServer.verifyUserToken(request);
-    console.log('[middleware] authenticatedUser:', authenticatedUser);
+    console.log('[middleware] authenticated user:', authenticatedUser);
     const newURL: URL = new URL(
       authenticatedUser ? homeHref : loginHref,
       request.url,
@@ -15,8 +15,11 @@ export function middleware(request: NextRequest) {
     console.log('[middleware] redirecting to :', newURL);
     return NextResponse.redirect(newURL);
   } catch (error) {
-    console.log(error);
-    if (!request.url.includes(loginHref)) {
+    if (
+      error instanceof Error &&
+      error.message.toLowerCase().includes('no token found') &&
+      !request.url.includes(loginHref)
+    ) {
       const newURL: URL = new URL(loginHref, request.url);
       console.log('[middleware] redirecting to :', newURL);
       return NextResponse.redirect(newURL);
