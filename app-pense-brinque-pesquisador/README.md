@@ -38,7 +38,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 Links:
-https://github.com/rpao/PenseBrinquePesquisador/tree/main/pense-brinque-pesquisador/src/app
+https://github.com/rpao/PenseBrinquePesquisador/tree/main/app-pense-brinque-pesquisador/src/app
 https://github.com/TeleRaptor65/Pense-e-Brinque/tree/main
 https://nextjs.org/docs/app/building-your-application/styling/css-modules
 https://react-bootstrap.github.io/docs/components/cards
