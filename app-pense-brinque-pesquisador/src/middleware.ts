@@ -1,32 +1,28 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
 import { loginHref } from './app/login/page';
+import routerHandler from './app/router/routerHandler';
 import { homeHref } from './app/home/page';
-import authenticationServer from './app/authentication/authenticationServer';
+import { Cookies } from './cookieKeys';
 
 export function middleware(request: NextRequest) {
   try {
-    const authenticatedUser = authenticationServer.verifyUserToken(request);
-    console.log('[middleware] authenticated user:', authenticatedUser);
-    const newURL: URL = new URL(
-      authenticatedUser ? homeHref : loginHref,
-      request.url,
-    );
-    console.log('[middleware] redirecting to :', newURL);
-    return NextResponse.redirect(newURL);
-  } catch (error) {
-    if (
-      error instanceof Error &&
-      error.message.toLowerCase().includes('no token found') &&
-      !request.url.includes(loginHref)
-    ) {
-      const newURL: URL = new URL(loginHref, request.url);
-      console.log('[middleware] redirecting to :', newURL);
-      return NextResponse.redirect(newURL);
+    const isLoginPage = request.nextUrl.pathname.includes(loginHref);
+    const authenticatedUser = request.cookies.get(Cookies.userTokenKey)?.value;    
+    if (authenticatedUser) {
+      return isLoginPage
+        ? routerHandler.redirect(homeHref)
+        : NextResponse.next();
     }
+
+    return isLoginPage
+      ? NextResponse.next()
+      : routerHandler.redirect(loginHref);
+
+  } catch (error) {
+    console.log('[MIDDLEWARE ERROR]', error);
   }
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
+  matcher: ['/', '/login', '/home', '/home/:path'],
 };

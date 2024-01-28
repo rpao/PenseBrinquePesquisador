@@ -8,6 +8,7 @@ See [Next.js - Authentication](https://nextjs.org/docs/app/building-your-applica
 2. Session Management: tracks the user's state across multiple requests (i.e. logged in).
 3. Authorization: decides what parts of the application the user is allowed to access.
 
+
 ## Authentication Logic
 
 ### Strategy
@@ -31,21 +32,11 @@ The user logs in, the server creates a unique token containing user data (JSON W
 #### Structure
 
 1. Authentication Service: manages login, logout and token handling.
+2. Middleware: manages authorization. Reed [Protecting routes with Middleware](https://nextjs.org/docs/app/building-your-application/authentication#protecting-routes-with-middleware) for more info.
 2. Authentication Context: manages and shares user authentication state across the components.
 
 #### Logic
 
-**Login Page:** if a valid token is found, redirects to home page, else, after email and password submition, a request gets a valid token for the user and store it in the localstorage. If the request return no token, an error is displayed.
-
-**Other pages:** AuthProvide is responsible for search and check a valid token. If a valid user token is found: redirects to home (if loggin or root page), else keep page. If no valid token is found, redirects to login.
-
-For all new `page.tsx`, the html page should use the following structure:
-
-```html
-<AuthProvider>
-  <div>your code here</div>
-</AuthProvider>
-```
 
 #### References
 
